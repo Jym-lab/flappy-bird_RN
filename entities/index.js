@@ -9,3 +9,4 @@ export default restart => {
     Bird: bird(world, 'green', {x: 50, y: 300}, {height: 40, width: 40}),
   };
 };
+
