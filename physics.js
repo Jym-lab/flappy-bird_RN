@@ -38,6 +38,10 @@ const Physics = (entities, {touches, time, dispatch}) => {
       y: 0,
     });
   }
+
+  Matter.Events.on(engine, 'collisionStart', event => {
+    dispatch({type: 'game_over'});
+  });
   return entities;
 };
 
