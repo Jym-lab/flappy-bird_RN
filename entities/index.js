@@ -13,7 +13,8 @@ export default restart => {
   let engine = Matter.Engine.create({enableSleeping: false});
   let world = engine.world;
   world.gravity.y = 0.4;
-  const pipeSizePosA = getPipeSizePosPair(-300);
+  const pipeSizePosA = getPipeSizePosPair();
+  const pipeSizePosB = getPipeSizePosPair(windowWidth * 0.9);
   return {
     physics: {engine, world},
     Bird: bird(world, 'green', {x: 50, y: 300}, {height: 40, width: 40}),
@@ -30,6 +31,20 @@ export default restart => {
       'blue',
       pipeSizePosA.pipeBottom.pos,
       pipeSizePosA.pipeBottom.size,
+    ),
+    ObstacleTop2: Obstacle(
+      world,
+      'ObstacleTop2',
+      'red',
+      pipeSizePosB.pipeTop.pos,
+      pipeSizePosB.pipeTop.size,
+    ),
+    ObstacleBottom2: Obstacle(
+      world,
+      'ObstacleBottom2',
+      'blue',
+      pipeSizePosB.pipeBottom.pos,
+      pipeSizePosB.pipeBottom.size,
     ),
     Floor: Floor(
       world,
