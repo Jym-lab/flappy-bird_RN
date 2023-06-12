@@ -2,11 +2,13 @@ import {StatusBar} from 'react-native';
 import React from 'react';
 import {View} from 'react-native';
 import {GameEngine} from 'react-native-game-engine';
+import entities from './entities';
 
 export default function App() {
   return (
     <View style={{flex: 1}}>
       <GameEngine
+        entities={entities()}
         style={{
           position: 'absolute',
           top: 0,
