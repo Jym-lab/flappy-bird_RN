@@ -16,6 +16,7 @@ const Obstacle = props => {
       style={{
         borderWidth: 1,
         borderColor: color,
+        backgroundColor: color,
         borderStyle: 'solid',
         position: 'absolute',
         left: xBody,

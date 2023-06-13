@@ -11,10 +11,10 @@ const Floor = props => {
 
   const color = props.color;
 
-  return(
+  return (
     <View
       style={{
-		backgroundColor: color,
+        backgroundColor: color,
         position: 'absolute',
         left: xBody,
         top: yBody,
@@ -32,9 +32,9 @@ export default (world, color, pos, size) => {
     size.width,
     size.height,
     {
-		label: 'Floor',
-		isStatic: true,
-	},
+      label: 'Floor',
+      isStatic: true,
+    },
   );
   Matter.World.add(world, initFloor);
 
@@ -42,6 +42,6 @@ export default (world, color, pos, size) => {
     body: initFloor,
     color,
     pos,
-    renderer: <Floor/>,
+    renderer: <Floor />,
   };
 };

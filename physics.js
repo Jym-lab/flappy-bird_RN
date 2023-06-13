@@ -13,7 +13,7 @@ const Physics = (entities, {touches, time, dispatch}) => {
     .forEach(t => {
       Matter.Body.setVelocity(entities.Bird.body, {
         x: 0,
-        y: -8,
+        y: -6,
       });
     });
   Matter.Engine.update(engine, time.delta);
@@ -35,6 +35,7 @@ const Physics = (entities, {touches, time, dispatch}) => {
         entities[`ObstacleBottom${index}`].body,
         pipeSizePos.pipeBottom.pos,
       );
+      entities[`ObstacleTop${index}`].point = false;
     }
     Matter.Body.translate(entities[`ObstacleTop${index}`].body, {
       x: -1.5,
